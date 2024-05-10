@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class ValidacaoPetComAdocaoEmAndamento {
+public class ValidacaoPetComAdocaoEmAndamento implements ValidacaoSolicitacaoAdocao{
 
 
     @Autowired
@@ -22,7 +22,7 @@ public class ValidacaoPetComAdocaoEmAndamento {
     @Autowired
     private PetRepository petRepository;
 
-    public void validarAdocaoEmAndamento(SolicitacaoAdocaoDto dto){
+    public void validar(SolicitacaoAdocaoDto dto){
         List<Adocao> adocoes = adocaoRepository.findAll();
         Pet pet = petRepository.getReferenceById(dto.idPet());
 
