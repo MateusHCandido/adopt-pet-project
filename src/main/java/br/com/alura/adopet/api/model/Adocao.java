@@ -15,10 +15,8 @@ public class Adocao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
-    @Column(name = "data")
     private LocalDateTime data;
 
     @NotNull
@@ -34,11 +32,9 @@ public class Adocao {
     private Pet pet;
 
     @NotBlank
-    @Column(name = "motivo")
     private String motivo;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status")
     private StatusAdocao status;
 
     @Column(name = "justificativa_status")
