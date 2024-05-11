@@ -1,4 +1,4 @@
-package br.com.alura.adopet.api.controller;
+package br.com.alura.adopet.api.controller.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

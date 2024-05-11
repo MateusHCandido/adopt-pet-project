@@ -18,13 +18,9 @@ public class Adocao {
     private LocalDateTime data;
 
     @ManyToOne
-    @JsonBackReference("tutor_adocoes")
-    @JoinColumn(name = "tutor_id")
     private Tutor tutor;
 
     @OneToOne
-    @JoinColumn(name = "pet_id")
-    @JsonManagedReference("adocao_pets")
     private Pet pet;
 
     private String motivo;
@@ -32,7 +28,6 @@ public class Adocao {
     @Enumerated(EnumType.STRING)
     private StatusAdocao status;
 
-    @Column(name = "justificativa_status")
     private String justificativaStatus;
 
     @Override

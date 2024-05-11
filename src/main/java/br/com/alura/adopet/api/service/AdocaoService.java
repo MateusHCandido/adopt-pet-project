@@ -1,9 +1,8 @@
 package br.com.alura.adopet.api.service;
 
-import br.com.alura.adopet.api.controller.ReprovacaoAdocaoDto;
+import br.com.alura.adopet.api.controller.dto.ReprovacaoAdocaoDto;
 import br.com.alura.adopet.api.controller.dto.AprovacaoAdocaoDto;
 import br.com.alura.adopet.api.controller.dto.SolicitacaoAdocaoDto;
-import br.com.alura.adopet.api.exception.ValidacaoException;
 import br.com.alura.adopet.api.model.Adocao;
 import br.com.alura.adopet.api.model.Pet;
 import br.com.alura.adopet.api.model.StatusAdocao;
