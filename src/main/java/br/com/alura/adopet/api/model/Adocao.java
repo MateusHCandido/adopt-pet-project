@@ -1,7 +1,5 @@
 package br.com.alura.adopet.api.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -17,10 +15,10 @@ public class Adocao {
 
     private LocalDateTime data;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Tutor tutor;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private Pet pet;
 
     private String motivo;

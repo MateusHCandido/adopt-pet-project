@@ -1,6 +1,5 @@
 package br.com.alura.adopet.api.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -28,8 +27,7 @@ public class Abrigo {
     @Email
     private String email;
 
-    @OneToMany(mappedBy = "abrigo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JsonManagedReference("abrigo_pets")
+    @OneToMany(mappedBy = "abrigo", cascade = CascadeType.ALL)
     private List<Pet> pets;
 
     @Override
