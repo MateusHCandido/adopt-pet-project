@@ -1,9 +1,8 @@
 package br.com.alura.adopet.api.model;
 
 
+import br.com.alura.adopet.api.controller.dto.PetDto;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
 import java.util.Objects;
 
@@ -16,22 +15,16 @@ public class Pet {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    @NotNull
     private TipoPet tipo;
 
-    @NotBlank
     private String nome;
 
-    @NotBlank
     private String raca;
 
-    @NotNull
     private Integer idade;
 
-    @NotBlank
     private String cor;
 
-    @NotNull
     private Float peso;
 
     private Boolean adotado;
@@ -41,6 +34,16 @@ public class Pet {
 
     @OneToOne(mappedBy = "pet", fetch = FetchType.LAZY)
     private Adocao adocao;
+
+    public Pet (PetDto petDto, Abrigo abrigo){
+        this.nome = petDto.nome();
+        this.raca = petDto.raca();
+        this.idade = petDto.idade();
+        this.cor = petDto.cor();
+        this.peso = petDto.peso();
+        this.adotado = false;
+        this.abrigo = abrigo;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -67,48 +70,24 @@ public class Pet {
         return tipo;
     }
 
-    public void setTipo(TipoPet tipo) {
-        this.tipo = tipo;
-    }
-
     public String getNome() {
         return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getRaca() {
         return raca;
     }
 
-    public void setRaca(String raca) {
-        this.raca = raca;
-    }
-
-    public Integer getIdade() {
-        return idade;
-    }
-
-    public void setIdade(Integer idade) {
-        this.idade = idade;
-    }
-
     public String getCor() {
         return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
     }
 
     public Float getPeso() {
         return peso;
     }
 
-    public void setPeso(Float peso) {
-        this.peso = peso;
+    public Integer getIdade() {
+        return idade;
     }
 
     public Boolean getAdotado() {
@@ -127,11 +106,4 @@ public class Pet {
         this.abrigo = abrigo;
     }
 
-    public Adocao getAdocao() {
-        return adocao;
-    }
-
-    public void setAdocao(Adocao adocao) {
-        this.adocao = adocao;
-    }
 }
