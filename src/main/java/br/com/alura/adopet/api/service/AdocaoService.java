@@ -61,7 +61,7 @@ public class AdocaoService {
 
         String to = adocao.getPet().getAbrigo().getEmail();
         String subject = "Adoção aprovada";
-        String message = "Parabéns " +adocao.getTutor().getNome() +
+        String message = "Parabéns " + adocao.getTutor().getNome() +
                         "!\n\nSua adoção do pet " +
                         adocao.getPet().getNome() +", solicitada em " +
                         adocao.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")) +
