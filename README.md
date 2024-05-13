@@ -41,3 +41,11 @@ O projeto desse repositório foi desenvolvido por [Alura](https://www.alura.com.
 Instrutor: [Rodrigo Ferreira](https://cursos.alura.com.br/user/rodrigo-ferreira)
 
 ---
+
+## 📝 Observações do autor
+
+A utilização de banco foi migrada para o PostgreSQL, então o pom.xml e as configurações do ambiente de desenvolvimento estão baseadas no PostgreSQL.
+ Dentro do diretório resources>db.migration, os arquivos .sql que geram as tabelas foram refatoradas para a sintaxe do PostgreSQL.
+
+Não foi apresentado no curso, mas quis aplicar o conhecimento do Swagger, uma ferramente utilizada para documentar os 
+endpoints das APIs geradas. Assim que o servidor estiver rodando, acessar o [Swagger](http://localhost:8080/swagger-ui/index.html)
